@@ -1,0 +1,25 @@
+{
+  "name": "react-count-down-latch",
+  "version": "1.0.0",
+  "description": "A count down latch pre-loader for React",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Pearce <me@benpearce.io>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "typescript": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "eslint": "^8.37.0",
+    "eslint-plugin-react": "^7.32.2",
+    "ts-loader": "^9.4.2"
+  }
+}
