@@ -24,16 +24,16 @@ const Provider = ({ start, children }: CountDownLatchProviderProps): JSX.Element
   const [count, setCount] = useState<number>(start);
   const countRef = useRef<number>(start);
 
-  const countDown = () => {
+  const countDownRef = useRef(() => {
     if (countRef.current == 0) {
       throw new Error('Counter already reached zero');
     }
 
     countRef.current -= 1;
     setCount(countRef.current);
-  };
+  });
 
-  return <CountDownLatchContext.Provider value={{ countDown, count }}>
+  return <CountDownLatchContext.Provider value={{ count, countDown: countDownRef.current }}>
     { children }
   </CountDownLatchContext.Provider>;
 };
