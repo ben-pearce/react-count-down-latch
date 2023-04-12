@@ -32,14 +32,14 @@ const Provider = ({ start, children }) => {
     }
     const [count, setCount] = (0, react_1.useState)(start);
     const countRef = (0, react_1.useRef)(start);
-    const countDown = () => {
+    const countDownRef = (0, react_1.useRef)(() => {
         if (countRef.current == 0) {
             throw new Error('Counter already reached zero');
         }
         countRef.current -= 1;
         setCount(countRef.current);
-    };
-    return react_1.default.createElement(CountDownLatchContext.Provider, { value: { countDown, count } }, children);
+    });
+    return react_1.default.createElement(CountDownLatchContext.Provider, { value: { count, countDown: countDownRef.current } }, children);
 };
 exports.Provider = Provider;
 const Overlay = ({ children }) => {
